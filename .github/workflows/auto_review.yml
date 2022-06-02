@@ -7,6 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: delivery-much/actions-assigner@v1
+        if: ${{ ${GITHUB_REF##*/ == 'TEST'}}}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: dannylith
