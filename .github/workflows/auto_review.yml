@@ -6,7 +6,7 @@ jobs:
   test:v
     runs-on: ubuntu-latest
     steps:
-      run: echo "GITHUB_REF = $GITHUB_REF"
+      - run: echo "GITHUB_REF = $GITHUB_REF"
   assign:
     if: ${{ env.GITHUB_REF == 'test'}}}
     runs-on: ubuntu-latest
