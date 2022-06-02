@@ -19,5 +19,3 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - name: "test env variable"
-      - run: echo "ROOT_ENV = $ROOT_ENV"
