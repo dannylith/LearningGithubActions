@@ -24,4 +24,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "test env variable"
-      - run: ech "ROOT_ENV = $ROOT_ENV"
+      - run: echo "ROOT_ENV = $ROOT_ENV"
