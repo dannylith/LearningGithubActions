@@ -6,8 +6,9 @@ jobs:
   assign:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "GITHUB_REF"
       - uses: delivery-much/actions-assigner@v1
-        if: ${{ env.GITHUB_REF == 'TEST'}}}
+        if: ${{ env.GITHUB_REF == 'main'}}}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: dannylith
