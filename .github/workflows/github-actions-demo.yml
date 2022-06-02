@@ -22,7 +22,7 @@ jobs:
       - run: echo "ROOT_ENV = $ROOT_ENV"
       - run: echo "GITHUB_REF = $GITHUB_REF"
       - run: |
-          echo " ${GITHUB_REF##*/}"
+          echo "GITHUB_REF##*/ =  ${GITHUB_REF##*/}"
           echo "test"
           echo "test2"
 
