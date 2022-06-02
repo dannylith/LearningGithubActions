@@ -24,9 +24,9 @@ jobs:
       - run: echo " ${GITHUB_REF##*/}"
 
       - run: |
-          if [[ $GITHUB_REF == 'refs/heads/dev' ]]; then
+          if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
               echo "TEST_VAR=./dev/dev/.dev" >> "$GITHUB_ENV"
-          elif [[ $GITHUB_REF == 'refs/heads/main' ]]; then
+          elif [[ $GITHUB_REF == 'refs/heads/test' ]]; then
               echo "TEST_VAR=./test/test/.test" >> "$GITHUB_ENV"
           else
               echo "TEST_VAR=failed Assignment test" >> "$GITHUB_ENV"
