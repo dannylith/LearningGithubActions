@@ -14,8 +14,21 @@ jobs:
     steps:
       - run: echo "GITHUB_BASE_REF = $GITHUB_BASE_REF"
       - run: echo "${{ github.base_ref }}"
-  assign:
+  assign_dev:
     if: ${{ github.base_ref == 'main' }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "${{env.GITHUB_BASE_REF}}"
+      - run: echo "$GITHUB_BASE_REF"
+      - run: echo "${{env.GITHUB_HEAD_REF}}"
+      - run: echo "$GITHUB_HEAD_REF"
+      - uses: delivery-much/actions-assigner@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          reviewers: dannylith
+
+  assign_test:
+    if: ${{ github.base_ref == 'test' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{env.GITHUB_BASE_REF}}"
