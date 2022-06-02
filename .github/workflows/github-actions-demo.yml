@@ -21,7 +21,10 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "ROOT_ENV = $ROOT_ENV"
       - run: echo "GITHUB_REF = $GITHUB_REF"
-      - run: echo " ${GITHUB_REF##*/}"
+      - run: |
+          echo " ${GITHUB_REF##*/}"
+          echo "test"
+          echo "test2"
 
       - run: |
           if [[ ${GITHUB_REF##*/} == 'dev' ]]; then
