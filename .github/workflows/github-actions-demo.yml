@@ -22,3 +22,10 @@ jobs:
       - run: echo "ROOT_ENV = $ROOT_ENV"
       - run: echo "GITHUB_REF = $GITHUB_REF"
       - run: echo " ${GITHUB_REF##*/}"
+      - name: set env for branch
+      - run: |
+          if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
+              echo "TEST_VAR=successAssignment" >> "$GITHUB_ENV"
+          else
+              echo "TEST_VAR=failedAssignment" >> "$GITHUB_ENV"
+          fi
