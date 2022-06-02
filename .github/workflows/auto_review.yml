@@ -3,12 +3,15 @@ on:
   pull_request:
     types: [opened, reopened]
 jobs:
+  test:
+    run: echo "GITHUB_REF = $GITHUB_REF"
   assign:
+    if: ${{ env.GITHUB_REF == 'test'}}}
     runs-on: ubuntu-latest
     steps:
       - run: echo "GITHUB_REF"
       - uses: delivery-much/actions-assigner@v1
-        if: ${{ env.GITHUB_REF == 'main'}}}
+        
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: dannylith
