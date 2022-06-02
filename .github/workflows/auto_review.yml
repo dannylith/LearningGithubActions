@@ -8,10 +8,10 @@ jobs:
     steps:
       - run: echo "GITHUB_REF = $GITHUB_REF"
   assign:
-    if: ${{ false }}
+    if: ${{ true }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "GITHUB_REF"
+      - run: echo "${{env.GITHUB_REF}}"
       - uses: delivery-much/actions-assigner@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
