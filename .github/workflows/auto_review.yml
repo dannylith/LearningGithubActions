@@ -3,7 +3,7 @@ on:
   pull_request:
     types: [opened, reopened]
 jobs:
-  test:v
+  test:
     runs-on: ubuntu-latest
     steps:
       - run: echo "GITHUB_REF = $GITHUB_REF"
