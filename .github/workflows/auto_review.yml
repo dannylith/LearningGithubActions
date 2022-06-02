@@ -12,13 +12,13 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "GITHUB_REF = $GITHUB_REF"
+      - run: echo "GITHUB_BASE_REF = $GITHUB_BASE_REF"
   assign:
     if: ${{ true }}
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{env.GITHUB_REF}}"
-      - run: echo "$GITHUB_REF"
+      - run: echo "${{env.GITHUB_BASE_REF}}"
+      - run: echo "$GITHUB_BASE_REF"
       - uses: delivery-much/actions-assigner@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
