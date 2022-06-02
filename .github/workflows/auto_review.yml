@@ -13,9 +13,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "GITHUB_BASE_REF = $GITHUB_BASE_REF"
-      - run: echo "${{ github.GITHUB_BASE_REF }}"
+      - run: echo "${{ github.base_ref }}"
   assign:
-    if: ${{ github.GITHUB_BASE_REF == 'main' }}
+    if: ${{ github.base_ref == 'main' }}
     runs-on: ubuntu-latest
     steps:
       - run: echo "${{env.GITHUB_BASE_REF}}"
