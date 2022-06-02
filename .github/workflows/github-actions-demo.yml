@@ -21,3 +21,4 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: echo "ROOT_ENV = $ROOT_ENV"
       - run: echo "GITHUB_REF = $GITHUB_REF"
+      - run: echo "GITHUB_REF##*/ = $GITHUB_REF##*/"
