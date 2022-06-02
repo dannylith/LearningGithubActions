@@ -26,6 +26,6 @@ jobs:
           if [[ $GITHUB_REF == 'refs/heads/main' ]]; then
               echo "TEST_VAR=successAssignment" >> "$GITHUB_ENV"
           else
-              echo "TEST_VAR=failedAssignment" >> "$GITHUB_ENV"
+              echo "TEST_VAR=failed Assignment test" >> "$GITHUB_ENV"
           fi
       - run: echo "TEST_VAR = $TEST_VAR"
