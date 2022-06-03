@@ -37,3 +37,6 @@ jobs:
               echo "TEST_VAR=failed Assignment test" >> "$GITHUB_ENV"
           fi
       - run: echo "TEST_VAR = $TEST_VAR"
+      - run: |
+          echo "Show all evn variables"
+          env
