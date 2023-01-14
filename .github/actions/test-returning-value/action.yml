@@ -15,5 +15,5 @@ runs:
     - run: echo InputTest value - ${{ inputs.inputTest }}.
       shell: bash
     - id: output-value-generator
-      run: echo "output-value=ouputTesting" >> $GITHUB_OUTPUT
+      run: echo "output-value=This is the output value" >> $GITHUB_OUTPUT
       shell: bash

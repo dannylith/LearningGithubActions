@@ -6,10 +6,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Run testReturningValue
+      - name: Run testReturningValue ${{ steps.foo.outputs.outputValue }}
         id: foo
         uses: ./.github/actions/test-returning-value
         with:
           inputTest: testing from main action
-      - run: echo random-number ${{ steps.foo.outputs.outputValue }}
+      - run: echo whatever this ${{ steps.foo.outputs.outputValue }}
         shell: bash
