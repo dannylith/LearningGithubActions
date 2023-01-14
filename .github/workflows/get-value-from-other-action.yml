@@ -1,0 +1,14 @@
+name: Test Get Output Value
+on: [workflow_dispatch]
+
+jobs:
+  Test-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run testReturningValue
+        id: foo
+        uses: ./.github/actions/test-returning-value
+        with:
+          inputTest: testing from main action
+      - run: echo random-number ${{ steps.foo.outputs.outputValue }}
+        shell: bash

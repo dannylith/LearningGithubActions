@@ -1,0 +1,19 @@
+name: "Return value from this"
+
+inputs:
+  inputTest:
+    description: "App name according to angular.json"
+    required: true
+outputs:
+    outputValue:
+      description: "Output value"
+      value: ${{ steps.output-value-generator.outputs.output-value }}
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo InputTest value - ${{ inputs.inputTest }}.
+      shell: bash
+    - id: output-value-generator
+      run: echo "output-value=ouputTesting" >> $GITHUB_OUTPUT
+      shell: bash
