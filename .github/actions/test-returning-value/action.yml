@@ -7,7 +7,7 @@ inputs:
 outputs:
     outputValue:
       description: "Output value"
-      value: ${{ steps.output-value-generator.outputs.output-value }}
+      value: ${{ steps.old-output.outputs.result }}
 
 runs:
   using: "composite"
@@ -17,3 +17,5 @@ runs:
     - id: output-value-generator
       run: echo "output-value=This is the output value" >> $GITHUB_OUTPUT
       shell: bash
+    - id: old-output
+      run: echo "::set-output name=result::This is the old way"
