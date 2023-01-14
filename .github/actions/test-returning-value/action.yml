@@ -19,3 +19,4 @@ runs:
       shell: bash
     - id: old-output
       run: echo "::set-output name=result::This is the old way"
+      shell: bash
