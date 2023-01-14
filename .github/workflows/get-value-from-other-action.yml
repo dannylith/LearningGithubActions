@@ -5,6 +5,7 @@ jobs:
   Test-run:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - name: Run testReturningValue
         id: foo
         uses: ./.github/actions/test-returning-value
