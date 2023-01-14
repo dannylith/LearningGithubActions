@@ -11,5 +11,5 @@ jobs:
         uses: ./.github/actions/test-returning-value
         with:
           inputTest: testing from main action
-      - run: Tag - ${{ steps.foo.outputs.outputValue }}
+      - run: echo Tag - ${{ steps.foo.outputs.outputValue }}
         shell: bash
