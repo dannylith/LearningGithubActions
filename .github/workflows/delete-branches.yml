@@ -1,0 +1,23 @@
+name: delete branches
+on:
+  pull_request:
+    workflow_dispatch
+    
+jobs:
+  housekeeping:
+    name: Cleanup old branches
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Run delete-old-branches-action
+        uses: beatlabs/delete-old-branches-action@v0.0.9
+        with:
+          repo_token: ${{ github.token }}
+          date: '2/10/2023'
+          dry_run: true
+          delete_tags: false
+          minimum_tags: 5
+          extra_protected_branch_regex: ^(main|test)$
+          extra_protected_tag_regex: '^v.*'
+          exclude_open_pr_branches: true
