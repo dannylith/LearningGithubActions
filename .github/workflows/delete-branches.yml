@@ -1,7 +1,6 @@
 name: delete branches
 on:
-  pull_request:
-    workflow_dispatch
+  workflow_dispatch:
     
 jobs:
   housekeeping:
