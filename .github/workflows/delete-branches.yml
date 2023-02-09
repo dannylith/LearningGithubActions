@@ -1,6 +1,8 @@
 name: delete branches
 on:
   workflow_dispatch:
+  schedule:
+    - cron:  '*/1 * * * *'
     
 jobs:
   housekeeping:
