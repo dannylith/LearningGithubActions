@@ -2,7 +2,7 @@ name: delete branches
 
 on:
   schedule:
-    - cron:  '* * * * *'
+    - cron:  '0 0 1 * *'
   workflow_dispatch:
     
 jobs:
@@ -16,7 +16,7 @@ jobs:
         uses: beatlabs/delete-old-branches-action@v0.0.9
         with:
           repo_token: ${{ github.token }}
-          date: '2/10/2023'
+          date: '3 months ago'
           dry_run: false
           delete_tags: false
           minimum_tags: 5
