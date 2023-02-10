@@ -2,7 +2,7 @@ name: delete branches
 
 on:
   schedule:
-    - cron:  '0 0 1 * *'
+    - cron:  '* * * * *'
   workflow_dispatch:
     
 jobs:
