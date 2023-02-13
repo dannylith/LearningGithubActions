@@ -1,0 +1,21 @@
+name: PR delete branch
+
+on:
+  pull_request:
+    branches: [ develop, master, release, uat, main ]
+    types:
+      -closed
+    
+jobs:
+  housekeeping:
+    name: Cleanup old branches
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      - name: Delete ${{ github.event.pull_request.head.ref }} branch
+        run: |
+          git fetch
+          git push origin --delete ${{ github.event.pull_request.head.ref }}
