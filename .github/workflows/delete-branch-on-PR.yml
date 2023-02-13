@@ -1,10 +1,8 @@
 name: PR delete branch
 
 on:
-  pull_request:
+  push:
     branches: [ develop, master, release, uat, main ]
-    types:
-      -closed
     
 jobs:
   housekeeping:
